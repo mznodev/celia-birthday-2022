@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import React from "react";
 import Countdown from "react-countdown";
 import styled, { keyframes } from "styled-components";
@@ -10,14 +10,18 @@ function App() {
   //Styles
 
   const Title = styled.h1`
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
-    color: palevioletred;
+    color: #18ffff;
+    font-family: "Press Start 2P", cursive;
+    -webkit-text-stroke: 1px black;
   `;
   const Subtitle = styled.h2`
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
-    color: palevioletred;
+    color: #18ffff;
+    font-family: "Press Start 2P", cursive;
+    text-shadow: 4px 4px gray;
   `;
   const Wrapper = styled.section`
     height: 100vh;
@@ -89,10 +93,11 @@ from {
         <>
           <Wrapper>
             <Title>
-              Quedan {days} Dias {hours} Horas {minutes} Minutos {seconds}{" "}
-              Segundos para poder empezar
+              Bienvenida a tu proximo cumple Gordi <br />
+              <br /> Quedan {days} Dias {hours} Horas {minutes} Minutos y{" "}
+              {seconds} Segundos para poder empezar
               <br />
-              <Subtitle>Trabajando....</Subtitle>
+              <Subtitle>Trabajando...</Subtitle>
             </Title>
           </Wrapper>
         </>
