@@ -65,7 +65,7 @@ function WaitingScreen() {
             <Title>
               Durmiendo hasta tu próximo cumpleaños.
               <br /> Quedan {days} Dias {hours} Horas {minutes} Minutos y{" "}
-              {seconds} Segundos para poder empezar.
+              {seconds} Segundos para poder empezar
               <br />
             </Title>
           </Wrapper>
