@@ -13,15 +13,23 @@ function WaitingScreen() {
     text-align: center;
     color: #18ffff;
     font-family: "Gemunu Libre", sans-serif;
-    -webkit-text-stroke: 1px;
+
     margin: 0;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 10;
   `;
   const Subtitle = styled.h2`
     font-size: 2em;
     text-align: center;
     color: #18ffff;
     font-family: "Gemunu Libre", sans-serif;
-    text-shadow: 4px 4px gray;
+    color: rgba(255, 255, 255, 0.3);
+
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 2;
   `;
   const Wrapper = styled.div`
     padding-top: 20%;
@@ -30,19 +38,15 @@ function WaitingScreen() {
     display: flex;
     align-items: center;
     justify-content: center; */
-  `;
-
-  const BackgroundImage = styled.div`
-    background-image: "url(${waitingScreen})";
-    background-size: "cover";
-    height: "100vh";
+    z-index: 2;
   `;
 
   const OsoCoffeeImage = styled.img`
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 1;
+    height: 16%;
+
     /*  width: 100%; */
   `;
   // Random component
@@ -59,12 +63,12 @@ function WaitingScreen() {
         <>
           <Wrapper>
             <Title>
-              Durmiento hasta tu proximo cumpleaños, Quedan {days} Dias {hours}{" "}
-              Horas {minutes} Minutos y {seconds} Segundos para poder empezar
+              Durmiendo hasta tu próximo cumpleaños.
+              <br /> Quedan {days} Dias {hours} Horas {minutes} Minutos y{" "}
+              {seconds} Segundos para poder empezar.
               <br />
             </Title>
           </Wrapper>
-          <Subtitle>Trabajando...</Subtitle>
         </>
       );
     }
