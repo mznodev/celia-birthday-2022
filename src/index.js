@@ -10,7 +10,7 @@ import WaitingScreen from "WaitingScreen";
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<PantallaPrincipal />} />
+      <Route path="/" element={<WaitingScreen />} />
       <Route path="PantallaPrincipal" element={<PantallaPrincipal />} />
       <Route path="Game" element={<Game />} />
       <Route path="WaitingScreen" element={<WaitingScreen />} />
