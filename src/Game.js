@@ -265,6 +265,7 @@ const Game = () => {
   };
 
   const handleCloseCorrect = () => {
+    setScoreDisplay(0);
     setOpenCorrect(false);
   };
 

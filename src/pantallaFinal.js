@@ -88,12 +88,12 @@ const Button = styled.button`
 
   //display: block;
 `;
-const PantallaPrincipal = () => {
+const PantallaFinal = () => {
   const [scoreDisplay, setScoreDisplay] = useState(0);
   let navigate = useNavigate();
   return (
     <>
-      <Title>¡Bienvenida a tú 26 cumpleaños!</Title>
+      <Title>¡ENHORABUENA!</Title>
       <Contenedor>
         <h3>
           En este tú 26 cumpleaños y viendo la viciada que llevabas al harry
@@ -117,4 +117,4 @@ const PantallaPrincipal = () => {
   );
 };
 
-export default PantallaPrincipal;
+export default PantallaFinal;
