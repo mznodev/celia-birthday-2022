@@ -102,8 +102,9 @@ const PantallaPrincipal = () => {
         </h3>
         <P>Bueno.. Bueno... 26 años ¿no?.. querido potter</P>
         <P1>
-          en esta aventura deberás sobrevolar los puzzles mágicos y acabar con
-          el que... no debe ser nombrado...
+          En esta aventura deberás sobrevolar los increibles, fantasticos a la
+          vez de gloriosos puzzles mágicos y acabar con.... el que no debe ser
+          nombrado...
         </P1>
         <Button
           onClick={() => {

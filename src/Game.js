@@ -11,6 +11,7 @@ import styled from "styled-components";
 import React from "react";
 import Modal from "@mui/material/Modal";
 import { Backdrop, Box, Fade } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const width = 8;
 const candyColors = [
@@ -63,7 +64,10 @@ const Button = styled.button`
 
 const ModalTitle = styled.h1`
   text-align: center;
+  color: #00c853;
   font-family: "Henny Penny", cursive;
+  font-size: 2.6em;
+  -webkit-text-stroke: 0.1px black;
 `;
 
 const ModalDescription = styled.p`
@@ -79,7 +83,7 @@ const Game = () => {
   const [squareBeingDragged, setSquareBeingDragged] = useState(null);
   const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
   const [scoreDisplay, setScoreDisplay] = useState(0);
-
+  let navigate = useNavigate();
   const checkForColumnOfFour = () => {
     for (let i = 0; i <= 39; i++) {
       const columnOfFour = [i, i + width, i + width * 2, i + width * 3];
@@ -338,9 +342,14 @@ const Game = () => {
             <ModalPremioText id="transition-modal-description">
               ¡Girate para Recibir tú regalo!
             </ModalPremioText>
-            <Button onClick={() => handleCloseCorrect()}>
-              Siguiente nivel
-            </Button>
+            {scoreDisplay <= 1000 ? (
+              <Button onClick={() => handleCloseCorrect()}>
+                Siguiente nivel
+              </Button>
+            ) : null}
+            {scoreDisplay > 1 ? (
+              <Button onClick={() => navigate("/pantallaFinal")}>Fin</Button>
+            ) : null}
           </Box>
         </Fade>
       </Modal>

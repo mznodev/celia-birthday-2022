@@ -96,9 +96,8 @@ const PantallaFinal = () => {
       <Title>¡ENHORABUENA!</Title>
       <Contenedor>
         <h3>
-          En este tú 26 cumpleaños y viendo la viciada que llevabas al harry
-          potter me vi en la obligación de hacerte un juego que seguro que....
-          TE VA A GUSTAR jajaja
+          has superado Los increibles, fantasticos a la vez de gloriosos puzzles
+          magicos!
         </h3>
         <P>Bueno.. Bueno... 26 años ¿no?.. querido potter</P>
         <P1>
