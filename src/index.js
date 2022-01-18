@@ -7,6 +7,7 @@ import PantallaPrincipal from "pantallaPrincipal";
 import Game from "Game";
 import WaitingScreen from "WaitingScreen";
 import PantallaFinal from "pantallaFinal";
+import Creditos from "creditos";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route path="pantallaPrincipal" element={<PantallaPrincipal />} />
       <Route path="pantallaFinal" element={<PantallaFinal />} />
       <Route path="game" element={<Game />} />
+      <Route path="creditos" element={<Creditos />} />
       <Route path="waitingScreen" element={<WaitingScreen />} />
     </Routes>
   </BrowserRouter>,

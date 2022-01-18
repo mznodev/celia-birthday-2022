@@ -10,6 +10,7 @@ import blank from "./images/blank.png";
 import styled from "styled-components";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import collage from "assets/images/collage.png";
 
 const width = 8;
 const candyColors = [
@@ -86,43 +87,28 @@ const Button = styled.button`
     color: white;
   }
 
-  //display: block;
+  //display: block;d
 `;
-const PantallaFinal = () => {
+const ImageFinal = styled.img`
+  /*   position: fixed;
+  bottom: 0;
+  right: 0; */
+  height: 90%;
+`;
+
+const Creditos = () => {
   const [scoreDisplay, setScoreDisplay] = useState(0);
   let navigate = useNavigate();
   return (
     <>
-      <Title>¡ENHORABUENA!</Title>
+      <Title>¡FELIZ CUMPLEAÑOS!</Title>
+
       <Contenedor>
-        <P>
-          ¡Has superado Los increíbles, fantásticos a la vez que gloriosos
-          puzzles mágicos!
-        </P>
-        <P1>
-          Bueno gordi, en éste tú 26 cumpleaños solo me queda decirte, que
-          espero que este juego lo hayas disfrutado como yo disfruto cada día a
-          tú lado y quiero darte las gracias por estar aquí, por ser como eres,
-          tú, esa persona que está sin preguntar, que ama incondicionalmente,
-          que disfruta cada momento, que sueña, que cree, que saca sonrisas
-          cuando mas lo necesitas, que me ayuda a crecer cada día, a ser más
-          fuerte y a ser la mejor versión de mí mismo. Y solo espero que este
-          sea el segundo juego de una saga interminable a la que yo estoy y voy
-          a estar suscrito desde el primero hasta el ultimo de mis días.
-        </P1>
-        <br />
-        <P>¡TE AMO!</P>
-        <P1>Att. Tú querido gordifuchi.</P1>
-        <Button
-          onClick={() => {
-            navigate("/creditos");
-          }}
-        >
-          Créditos
-        </Button>
+        <ImageFinal src={collage} />
+        <Title>¡TE AMO!</Title>
       </Contenedor>
     </>
   );
 };
 
-export default PantallaFinal;
+export default Creditos;
