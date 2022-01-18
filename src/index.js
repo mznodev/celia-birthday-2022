@@ -11,7 +11,7 @@ import PantallaFinal from "pantallaFinal";
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Game />} />
+      <Route path="/" element={<PantallaPrincipal />} />
       <Route path="pantallaPrincipal" element={<PantallaPrincipal />} />
       <Route path="pantallaFinal" element={<PantallaFinal />} />
       <Route path="game" element={<Game />} />

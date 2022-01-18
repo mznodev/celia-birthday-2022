@@ -31,6 +31,30 @@ const Title = styled.p`
   padding: 0;
   -webkit-text-stroke: 1px black;
 `;
+const TitleLvl = styled.p`
+  text-align: center;
+  font-family: "Henny Penny", cursive;
+  color: red;
+  font-size: 40pt;
+  margin-top: 18.2%;
+  margin-left: 32.6%;
+  position: absolute;
+  padding: 0;
+  border-radius: 25px;
+  background-color: #076579;
+  text-align: center;
+  padding: 0.16%;
+  -webkit-text-stroke: 1px black;
+  -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+`;
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -84,6 +108,13 @@ const Game = () => {
   const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
   const [scoreDisplay, setScoreDisplay] = useState(0);
   let navigate = useNavigate();
+  const [niveles, setNiveles] = useState([1, 2, 3, 4]);
+  const [selectedNivel, setSelectedNivel] = useState(0);
+  const [movimientos, setMovimientos] = useState([200, 150, 100, 50]);
+  const [puntos, setPuntos] = useState([10, 145, 188, 250]);
+  //const [puntos, setPuntos] = useState([10, 10, 10, 10]);
+
+  const [selectedPuntos, setSelectedPuntos] = useState(0);
   const checkForColumnOfFour = () => {
     for (let i = 0; i <= 39; i++) {
       const columnOfFour = [i, i + width, i + width * 2, i + width * 3];
@@ -259,7 +290,7 @@ const Game = () => {
     createBoard();
   }, []);
   useEffect(() => {
-    if (scoreDisplay >= 10) {
+    if (scoreDisplay >= puntos[selectedPuntos]) {
       setScoreDisplay(0);
       handleOpenCorrect();
     }
@@ -270,6 +301,8 @@ const Game = () => {
 
   const handleCloseCorrect = () => {
     setScoreDisplay(0);
+    setSelectedNivel(selectedNivel + 1);
+    setSelectedPuntos(selectedPuntos + 1);
     setOpenCorrect(false);
   };
 
@@ -295,7 +328,8 @@ const Game = () => {
   return (
     <>
       <Title>
-        Llega hasta 200 Puntos para recibir una sorpresa misteriosa...
+        Llega hasta {puntos[selectedPuntos]} Puntos para recibir una sorpresa
+        misteriosa...
       </Title>
       <div className="app">
         <div className="game">
@@ -316,6 +350,7 @@ const Game = () => {
             />
           ))}
         </div>
+        <TitleLvl>NIVEL {niveles[selectedNivel]}</TitleLvl>
 
         <ScoreBoard score={scoreDisplay} />
       </div>
@@ -342,13 +377,18 @@ const Game = () => {
             <ModalPremioText id="transition-modal-description">
               ¡Girate para Recibir tú regalo!
             </ModalPremioText>
-            {scoreDisplay <= 1000 ? (
+            {selectedNivel < 3 ? (
               <Button onClick={() => handleCloseCorrect()}>
                 Siguiente nivel
               </Button>
             ) : null}
-            {scoreDisplay > 1 ? (
-              <Button onClick={() => navigate("/pantallaFinal")}>Fin</Button>
+            {selectedNivel >= 3 ? (
+              <Button
+                style={{ marginLeft: "17.6vw" }}
+                onClick={() => navigate("/pantallaFinal")}
+              >
+                Fin
+              </Button>
             ) : null}
           </Box>
         </Fade>
